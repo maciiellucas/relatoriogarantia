@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Garantia PDF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Garantia</h1>
+        <form id="garantiaForm">
+            <section>
+                <h2>Dados do Cliente</h2>
+                <label>Cliente: <input type="text" id="cliente" required></label>
+                <label>Placa: <input type="text" id="placa" required></label>
+                <label>Modelo do Caminhão: <input type="text" id="modelo" required></label>
+                <label>Chassi: <input type="text" id="chassi" required></label>
+            </section>
+            
+            <section class="tabelas">
+                <div class="instalacao">
+                    <h2>Instalação</h2>
+                    <label>Número (Interno): <input type="text" id="num_instalacao" required></label>
+                    <label>Marca: <input type="text" id="marca_instalacao" required></label>
+                    <label>Data: <input type="date" id="data_instalacao" required></label>
+                    <label>OS Peças: <input type="text" id="os_pecas_instalacao" required></label>
+                    <label>OS Serviços: <input type="text" id="os_servicos_instalacao" required></label>
+                    <label>KM: <input type="number" id="km_instalacao" required></label>
+                </div>
+            
+                <div class="substituicao">
+                    <h2>Substituição</h2>
+                    <label>Número (Interno): <input type="text" id="num_substituicao" required></label>
+                    <label>Marca: <input type="text" id="marca_substituicao" required></label>
+                    <label>Data: <input type="date" id="data_substituicao" required></label>
+                    <label>OS Peças: <input type="text" id="os_pecas_substituicao" required></label>
+                    <label>OS Serviços: <input type="text" id="os_servicos_substituicao" required></label>
+                    <label>KM: <input type="number" id="km_substituicao" required></label>
+                </div>
+            </section>
+
+            <section>
+                <h2>Problema da Peça</h2>
+                <label>Descreva o problema:</label>
+                <textarea id="problema" rows="3" maxlength="250" required></textarea>
+            </section>
+
+            <button type="button" onclick="gerarPDF()">Gerar PDF</button>
+        </form>
+        
+        <footer>
+            <p>&copy; 2024 Maciel Poppe</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
